@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="si" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>සිංහල Legacy Converter</title>
+
+    <!-- ── PWA / Home Screen Icon ── -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwMDM1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMDAyMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idGV4dEdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZDhiNGZlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2E4NTVmNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXIxIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTgiLz4KICAgIDwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0iYmx1cjIiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMCIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTEwIiByeT0iMTEwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxlbGxpcHNlIGN4PSIxMzAiIGN5PSIxMjAiIHJ4PSIxNjAiIHJ5PSIxMzAiIGZpbGw9IiM3YzNhZWQiIG9wYWNpdHk9IjAuNDUiIGZpbHRlcj0idXJsKCNibHVyMSkiLz4KICA8ZWxsaXBzZSBjeD0iMzgwIiBjeT0iMzkwIiByeD0iMTMwIiByeT0iMTEwIiBmaWxsPSIjNWIyMWI2IiBvcGFjaXR5PSIwLjQiIGZpbHRlcj0idXJsKCNibHVyMSkiLz4KICA8ZWxsaXBzZSBjeD0iMzgwIiBjeT0iMTMwIiByeD0iOTAiIHJ5PSI4MCIgZmlsbD0iI2MwMjZkMyIgb3BhY2l0eT0iMC4yIiBmaWx0ZXI9InVybCgjYmx1cjIpIi8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxNzUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNjgsODUsMjQ3LDAuMTgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTU1IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMTY4LDg1LDI0NywwLjEpIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8cmVjdCB4PSI5NiIgeT0iMTc2IiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE2MCIgcng9IjQwIiByeT0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZT0icmdiYSgxNjgsODUsMjQ3LDAuMzUpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMjkyIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTQ4IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0idXJsKCN0ZXh0R3JhZCkiPuC3gzwvdGV4dD4KICA8dGV4dCB4PSIyNTYiIHk9IjQzMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgxOTIsMTMyLDI1MiwwLjcpIj5DT05WRVJURVI8L3RleHQ+CiAgPGNpcmNsZSBjeD0iMTgwIiBjeT0iMTQ4IiByPSI0IiBmaWxsPSIjYTg1NWY3IiBvcGFjaXR5PSIwLjYiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIxMzYiIHI9IjMiIGZpbGw9IiNjMDg0ZmMiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjMzMiIgY3k9IjE0OCIgcj0iNCIgZmlsbD0iI2E4NTVmNyIgb3BhY2l0eT0iMC42Ii8+Cjwvc3ZnPg==">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwMDM1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMDAyMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idGV4dEdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZDhiNGZlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2E4NTVmNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXIxIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTgiLz4KICAgIDwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0iYmx1cjIiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMCIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTEwIiByeT0iMTEwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxlbGxpcHNlIGN4PSIxMzAiIGN5PSIxMjAiIHJ4PSIxNjAiIHJ5PSIxMzAiIGZpbGw9IiM3YzNhZWQiIG9wYWNpdHk9IjAuNDUiIGZpbHRlcj0idXJsKCNibHVyMSkiLz4KICA8ZWxsaXBzZSBjeD0iMzgwIiBjeT0iMzkwIiByeD0iMTMwIiByeT0iMTEwIiBmaWxsPSIjNWIyMWI2IiBvcGFjaXR5PSIwLjQiIGZpbHRlcj0idXJsKCNibHVyMSkiLz4KICA8ZWxsaXBzZSBjeD0iMzgwIiBjeT0iMTMwIiByeD0iOTAiIHJ5PSI4MCIgZmlsbD0iI2MwMjZkMyIgb3BhY2l0eT0iMC4yIiBmaWx0ZXI9InVybCgjYmx1cjIpIi8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxNzUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNjgsODUsMjQ3LDAuMTgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTU1IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMTY4LDg1LDI0NywwLjEpIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8cmVjdCB4PSI5NiIgeT0iMTc2IiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE2MCIgcng9IjQwIiByeT0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZT0icmdiYSgxNjgsODUsMjQ3LDAuMzUpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMjkyIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTQ4IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0idXJsKCN0ZXh0R3JhZCkiPuC3gzwvdGV4dD4KICA8dGV4dCB4PSIyNTYiIHk9IjQzMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgxOTIsMTMyLDI1MiwwLjcpIj5DT05WRVJURVI8L3RleHQ+CiAgPGNpcmNsZSBjeD0iMTgwIiBjeT0iMTQ4IiByPSI0IiBmaWxsPSIjYTg1NWY3IiBvcGFjaXR5PSIwLjYiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIxMzYiIHI9IjMiIGZpbGw9IiNjMDg0ZmMiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjMzMiIgY3k9IjE0OCIgcj0iNCIgZmlsbD0iI2E4NTVmNyIgb3BhY2l0eT0iMC42Ii8+Cjwvc3ZnPg==">
+    <meta name="apple-mobile-web-app-title" content="සිංහල">
+    <meta name="application-name" content="සිංහල Converter">
+    <meta name="theme-color" content="#1a0035">
+
+    <!-- Inline PWA Manifest -->
+    <script>
+        const manifest = {
+            name: "සිංහල Legacy Converter",
+            short_name: "සිංහල",
+            description: "Convert Unicode Sinhala to FM/DL Legacy font encoding",
+            start_url: ".",
+            display: "standalone",
+            background_color: "#05000f",
+            theme_color: "#1a0035",
+            icons: [
+                { src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwMDM1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMDAyMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idGV4dEdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZDhiNGZlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2E4NTVmNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXIxIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTgiLz4KICAgIDwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0iYmx1cjIiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMCIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTEwIiByeT0iMTEwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxlbGxpcHNlIGN4PSIxMzAiIGN5PSIxMjAiIHJ4PSIxNjAiIHJ5PSIxMzAiIGZpbGw9IiM3YzNhZWQiIG9wYWNpdHk9IjAuNDUiIGZpbHRlcj0idXJsKCNibHVyMSkiLz4KICA8ZWxsaXBzZSBjeD0iMzgwIiBjeT0iMzkwIiByeD0iMTMwIiByeT0iMTEwIiBmaWxsPSIjNWIyMWI2IiBvcGFjaXR5PSIwLjQiIGZpbHRlcj0idXJsKCNibHVyMSkiLz4KICA8ZWxsaXBzZSBjeD0iMzgwIiBjeT0iMTMwIiByeD0iOTAiIHJ5PSI4MCIgZmlsbD0iI2MwMjZkMyIgb3BhY2l0eT0iMC4yIiBmaWx0ZXI9InVybCgjYmx1cjIpIi8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxNzUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNjgsODUsMjQ3LDAuMTgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTU1IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMTY4LDg1LDI0NywwLjEpIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8cmVjdCB4PSI5NiIgeT0iMTc2IiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE2MCIgcng9IjQwIiByeT0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZT0icmdiYSgxNjgsODUsMjQ3LDAuMzUpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMjkyIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTQ4IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0idXJsKCN0ZXh0R3JhZCkiPuC3gzwvdGV4dD4KICA8dGV4dCB4PSIyNTYiIHk9IjQzMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgxOTIsMTMyLDI1MiwwLjcpIj5DT05WRVJURVI8L3RleHQ+CiAgPGNpcmNsZSBjeD0iMTgwIiBjeT0iMTQ4IiByPSI0IiBmaWxsPSIjYTg1NWY3IiBvcGFjaXR5PSIwLjYiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIxMzYiIHI9IjMiIGZpbGw9IiNjMDg0ZmMiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjMzMiIgY3k9IjE0OCIgcj0iNCIgZmlsbD0iI2E4NTVmNyIgb3BhY2l0eT0iMC42Ii8+Cjwvc3ZnPg==", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" }
+            ]
+        };
+        const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('link');
+        link.rel = 'manifest'; link.href = url;
+        document.head.appendChild(link);
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════
+   THEME VARIABLES
+═══════════════════════════════════════════ */
+        :root {
+            --purple-glow: #7c3aed;
+            --purple-bright: #a855f7;
+            --accent: #c084fc;
+            --green: #34d399;
+            --orange: #fb923c;
+            --red: #f87171;
+            --radius: 18px;
+            --blur: blur(28px);
+            --trans: all .3s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg: #05000f;
+            --glass: rgba(255, 255, 255, 0.035);
+            --glass2: rgba(255, 255, 255, 0.055);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-focus: rgba(168, 85, 247, 0.5);
+            --text: rgba(255, 255, 255, 0.95);
+            --text2: rgba(255, 255, 255, 0.7);
+            --muted: rgba(255, 255, 255, 0.38);
+            --card-head: rgba(255, 255, 255, 0.015);
+            --shadow: rgba(0, 0, 0, 0.5);
+            --legacy-color: #d8b4fe;
+            --hist-bg: rgba(255, 255, 255, 0.03);
+            --hist-hover: rgba(168, 85, 247, 0.1);
+            --hist-border: rgba(255, 255, 255, 0.06);
+            --warn-bg: rgba(251, 146, 60, 0.08);
+            --warn-border: rgba(251, 146, 60, 0.25);
+            --warn-text: #fdba74;
+        }
+
+        [data-theme="light"] {
+            --bg: #f0ebff;
+            --glass: rgba(255, 255, 255, 0.78);
+            --glass2: rgba(255, 255, 255, 0.92);
+            --border: rgba(124, 58, 237, 0.14);
+            --border-focus: rgba(124, 58, 237, 0.4);
+            --text: rgba(20, 10, 40, 0.92);
+            --text2: rgba(20, 10, 40, 0.65);
+            --muted: rgba(20, 10, 40, 0.4);
+            --card-head: rgba(124, 58, 237, 0.04);
+            --shadow: rgba(100, 50, 200, 0.1);
+            --legacy-color: #6d28d9;
+            --hist-bg: rgba(124, 58, 237, 0.04);
+            --hist-hover: rgba(124, 58, 237, 0.1);
+            --hist-border: rgba(124, 58, 237, 0.12);
+            --warn-bg: rgba(234, 88, 12, 0.07);
+            --warn-border: rgba(234, 88, 12, 0.2);
+            --warn-text: #c2410c;
+        }
+
+        /* ═══════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            background: var(--bg);
+            font-family: 'Outfit', -apple-system, sans-serif;
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            transition: background .4s ease, color .3s ease;
+        }
+
+        /* ═══════════════════════════════════════════
+   ANIMATED BACKGROUND
+═══════════════════════════════════════════ */
+        .bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            transition: opacity .5s ease;
+        }
+
+        [data-theme="light"] .bg-canvas {
+            opacity: .3;
+        }
+
+        .bg-canvas::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 70% at 10% 0%, rgba(88, 28, 135, .75) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 60% at 90% 100%, rgba(126, 34, 206, .55) 0%, transparent 55%),
+                radial-gradient(ellipse 45% 45% at 50% 50%, rgba(168, 85, 247, .08) 0%, transparent 60%);
+            animation: bgShift 18s ease-in-out infinite alternate;
+        }
+
+        .bg-canvas::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 40% at 80% 20%, rgba(192, 38, 211, .25) 0%, transparent 55%),
+                radial-gradient(ellipse 35% 35% at 20% 70%, rgba(109, 40, 217, .3) 0%, transparent 55%);
+            animation: bgShift2 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgShift {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 1;
+            }
+
+            33% {
+                transform: scale(1.06) translate(-15px, 10px);
+                opacity: .9;
+            }
+
+            66% {
+                transform: scale(1.02) translate(10px, -8px);
+                opacity: .95;
+            }
+
+            100% {
+                transform: scale(1.08) translate(-5px, 15px);
+                opacity: .85;
+            }
+        }
+
+        @keyframes bgShift2 {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: .7;
+            }
+
+            50% {
+                transform: scale(1.1) translate(20px, -20px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(.95) translate(-10px, 10px);
+                opacity: .6;
+            }
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: orbFloat linear infinite;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .orb:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(168, 85, 247, .35), transparent 70%);
+            top: 10%;
+            left: -5%;
+            animation-duration: 25s;
+        }
+
+        .orb:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(192, 38, 211, .3), transparent 70%);
+            top: 60%;
+            right: -5%;
+            animation-duration: 20s;
+            animation-delay: -8s;
+        }
+
+        .orb:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(124, 58, 237, .4), transparent 70%);
+            bottom: 20%;
+            left: 40%;
+            animation-duration: 30s;
+            animation-delay: -15s;
+        }
+
+        @keyframes orbFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(.8);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-30px) scale(1.1);
+            }
+        }
+
+        .stars {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 15% 25%, rgba(255, 255, 255, .35) 0%, transparent 100%),
+                radial-gradient(1px 1px at 45% 65%, rgba(255, 255, 255, .25) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 70% 15%, rgba(255, 255, 255, .3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 85% 55%, rgba(255, 255, 255, .2) 0%, transparent 100%),
+                radial-gradient(1px 1px at 30% 80%, rgba(255, 255, 255, .25) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 60% 40%, rgba(255, 255, 255, .18) 0%, transparent 100%),
+                radial-gradient(1px 1px at 92% 30%, rgba(255, 255, 255, .22) 0%, transparent 100%),
+                radial-gradient(1px 1px at 5% 75%, rgba(255, 255, 255, .2) 0%, transparent 100%),
+                radial-gradient(1px 1px at 55% 90%, rgba(255, 255, 255, .15) 0%, transparent 100%);
+            animation: twinkle 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: .6
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .grain {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: .025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            animation: grainShift .5s steps(2) infinite;
+        }
+
+        @keyframes grainShift {
+            0% {
+                background-position: 0 0
+            }
+
+            25% {
+                background-position: -50px 25px
+            }
+
+            50% {
+                background-position: 25px -50px
+            }
+
+            75% {
+                background-position: -25px 50px
+            }
+
+            100% {
+                background-position: 50px -25px
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════ */
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 560px;
+            margin: 0 auto;
+            padding: max(env(safe-area-inset-top, 20px), 40px) 16px max(env(safe-area-inset-bottom, 20px), 28px);
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        /* ═══════════════════════════════════════════
+   HEADER + THEME TOGGLE
+═══════════════════════════════════════════ */
+        .header {
+            text-align: center;
+            padding: 4px 0 10px;
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) both;
+            position: relative;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .toggle-track {
+            width: 46px;
+            height: 26px;
+            border-radius: 13px;
+            background: var(--glass2);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: var(--trans);
+            display: flex;
+            align-items: center;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            box-shadow: 0 2px 12px var(--shadow);
+        }
+
+        .toggle-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            position: absolute;
+            left: 3px;
+            transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), background .3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            box-shadow: 0 2px 8px rgba(124, 58, 237, .5);
+            line-height: 1;
+        }
+
+        [data-theme="light"] .toggle-thumb {
+            transform: translateX(20px);
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            box-shadow: 0 2px 8px rgba(249, 115, 22, .4);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 14px;
+            background: rgba(168, 85, 247, .1);
+            border: 1px solid rgba(168, 85, 247, .25);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .badge-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: blink 2s infinite;
+        }
+
+        h1 {
+            font-size: clamp(26px, 8vw, 36px);
+            font-weight: 800;
+            letter-spacing: -.04em;
+            background: linear-gradient(135deg, #fff 0%, #d8b4fe 40%, #a855f7 70%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        [data-theme="light"] h1 {
+            background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
+        /* ═══════════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════════ */
+        .stats-bar {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .04s both;
+        }
+
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 100px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--muted);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            transition: var(--trans);
+        }
+
+        .stat-val {
+            color: var(--text2);
+            font-variant-numeric: tabular-nums;
+            transition: color .2s;
+        }
+
+        .stat-pill.active .stat-val {
+            color: var(--accent);
+        }
+
+        .stat-icon {
+            font-size: 12px;
+        }
+
+        /* ═══════════════════════════════════════════
+   GLASS CARD
+═══════════════════════════════════════════ */
+        .card {
+            background: var(--glass);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 8px 32px var(--shadow), 0 1px 0 rgba(255, 255, 255, .06) inset;
+            transition: border-color .3s, box-shadow .3s, background .4s;
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .05s both;
+        }
+
+        .card:focus-within {
+            border-color: var(--border-focus);
+            box-shadow: 0 8px 40px var(--shadow), 0 0 80px rgba(124, 58, 237, .15), 0 1px 0 rgba(255, 255, 255, .08) inset;
+        }
+
+        .card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 14px 9px;
+            border-bottom: 1px solid var(--border);
+            background: var(--card-head);
+        }
+
+        .card-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .char-count {
+            font-size: 10.5px;
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+            font-family: 'Outfit', sans-serif;
+            padding: 12px 14px;
+            resize: none;
+            min-height: 115px;
+            caret-color: var(--purple-bright);
+            -webkit-tap-highlight-color: transparent;
+            transition: color .3s;
+        }
+
+        textarea::placeholder {
+            color: var(--muted);
+            opacity: .55;
+            font-weight: 300;
+        }
+
+        /* ═══════════════════════════════════════════
+   UNMAPPED WARNING
+═══════════════════════════════════════════ */
+        .warn-box {
+            display: none;
+            align-items: flex-start;
+            gap: 9px;
+            padding: 11px 13px;
+            border-radius: 13px;
+            background: var(--warn-bg);
+            border: 1px solid var(--warn-border);
+            font-size: 11.5px;
+            color: var(--warn-text);
+            line-height: 1.55;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            animation: fadeUp .4s cubic-bezier(.22, 1, .36, 1) both;
+        }
+
+        .warn-box.visible {
+            display: flex;
+        }
+
+        .warn-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .warn-chars {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 5px;
+        }
+
+        .warn-chip {
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            background: rgba(251, 146, 60, .15);
+            border: 1px solid rgba(251, 146, 60, .3);
+            font-weight: 700;
+            letter-spacing: .03em;
+        }
+
+        /* ═══════════════════════════════════════════
+   CONVERT ROW
+═══════════════════════════════════════════ */
+        .convert-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .08s both;
+        }
+
+        .divline {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, .25), transparent);
+        }
+
+        /* ═══════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform .15s ease, box-shadow .2s ease, background .2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, .1), transparent);
+            pointer-events: none;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0);
+            transition: background .12s;
+        }
+
+        .btn:active::after {
+            background: rgba(255, 255, 255, .07);
+        }
+
+        .btn-convert {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 15.5px;
+            background: linear-gradient(135deg, #9333ea, #7c3aed 50%, #5b21b6);
+            color: #fff;
+            box-shadow: 0 2px 24px rgba(124, 58, 237, .55), 0 0 0 .5px rgba(255, 255, 255, .12) inset;
+        }
+
+        .btn-convert:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 36px rgba(124, 58, 237, .7), 0 0 0 .5px rgba(255, 255, 255, .18) inset;
+        }
+
+        .btn-convert:active {
+            transform: scale(.97);
+        }
+
+        .btn-convert.pulse {
+            animation: pulse .5s ease;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 2px 24px rgba(124, 58, 237, .55)
+            }
+
+            50% {
+                box-shadow: 0 0 70px rgba(168, 85, 247, .9)
+            }
+        }
+
+        .btn-clear {
+            width: 46px;
+            height: 46px;
+            border-radius: 13px;
+            font-size: 15px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+        }
+
+        .btn-clear:hover {
+            border-color: rgba(248, 113, 113, .35);
+            color: #f87171;
+            background: rgba(248, 113, 113, .06);
+        }
+
+        .btn-clear:active {
+            transform: scale(.93);
+        }
+
+        .btn-copy {
+            padding: 7px 14px;
+            border-radius: 9px;
+            font-size: 11px;
+            background: rgba(168, 85, 247, .1);
+            border: 1px solid rgba(168, 85, 247, .28);
+            color: var(--accent);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .btn-copy:hover {
+            background: rgba(168, 85, 247, .2);
+            border-color: rgba(168, 85, 247, .45);
+        }
+
+        .btn-copy:active {
+            transform: scale(.95);
+        }
+
+        .btn-copy.copied {
+            color: var(--green);
+            border-color: rgba(52, 211, 153, .35);
+            background: rgba(52, 211, 153, .08);
+        }
+
+        .btn-copy:disabled {
+            opacity: .28;
+            pointer-events: none;
+        }
+
+        /* ═══════════════════════════════════════════
+   OUTPUT SECTION
+═══════════════════════════════════════════ */
+        .output-section {
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .1s both;
+        }
+
+        .pane-tabs {
+            display: flex;
+            border-radius: var(--radius) var(--radius) 0 0;
+            border: 1px solid var(--border);
+            border-bottom: none;
+            overflow: hidden;
+            background: rgba(255, 255, 255, .02);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 8px;
+            border: none;
+            background: transparent;
+            color: var(--muted);
+            font-size: 11.5px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: .06em;
+            cursor: pointer;
+            transition: all .22s;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            color: var(--text);
+            background: rgba(168, 85, 247, .09);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--purple-bright), transparent);
+            border-radius: 2px;
+        }
+
+        .pane-body {
+            background: var(--glass);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: 0 8px 32px var(--shadow);
+            transition: background .4s;
+        }
+
+        .pane-content {
+            padding: 14px 16px;
+            min-height: 95px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.75;
+        }
+
+        #paneLegacy {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--legacy-color);
+            letter-spacing: .04em;
+            transition: color .4s;
+        }
+
+        .empty-msg {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            color: var(--muted);
+            font-style: italic;
+            letter-spacing: 0;
+        }
+
+        .pane-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 14px 12px;
+            gap: 10px;
+            border-top: 1px solid var(--border);
+        }
+
+        .hint {
+            font-size: 11.5px;
+            color: var(--muted);
+            flex: 1;
+            line-height: 1.45;
+        }
+
+        .hint strong {
+            color: var(--accent);
+        }
+
+        /* ═══════════════════════════════════════════
+   STATUS
+═══════════════════════════════════════════ */
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 12px;
+            font-size: 12px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            min-height: 38px;
+            transition: all .3s;
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .14s both;
+            font-weight: 500;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .15);
+            flex-shrink: 0;
+            transition: background .3s;
+        }
+
+        .status.ok .dot {
+            background: var(--green);
+            box-shadow: 0 0 10px rgba(52, 211, 153, .8);
+        }
+
+        .status.ok {
+            border-color: rgba(52, 211, 153, .2);
+            color: var(--text2);
+        }
+
+        .status.run .dot {
+            background: var(--accent);
+            box-shadow: 0 0 10px rgba(168, 85, 247, .8);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .2
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+   HISTORY
+═══════════════════════════════════════════ */
+        .history-section {
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .17s both;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2px 9px;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .hist-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            background: rgba(168, 85, 247, .15);
+            border: 1px solid rgba(168, 85, 247, .25);
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .btn-clear-hist {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--muted);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 3px 8px;
+            border-radius: 6px;
+            transition: color .2s, background .2s;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-clear-hist:hover {
+            color: var(--red);
+            background: rgba(248, 113, 113, .08);
+        }
+
+        .hist-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: 230px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(168, 85, 247, .3) transparent;
+        }
+
+        .hist-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .hist-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .hist-list::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, .3);
+            border-radius: 4px;
+        }
+
+        .hist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 13px;
+            border-radius: 13px;
+            background: var(--hist-bg);
+            border: 1px solid var(--hist-border);
+            cursor: pointer;
+            transition: var(--trans);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            animation: fadeUp .35s cubic-bezier(.22, 1, .36, 1) both;
+        }
+
+        .hist-item:hover {
+            background: var(--hist-hover);
+            border-color: rgba(168, 85, 247, .28);
+            transform: translateX(3px);
+        }
+
+        .hist-item:active {
+            transform: scale(.98);
+        }
+
+        .hist-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hist-input {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 2px;
+        }
+
+        .hist-output {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .hist-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .hist-time {
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        .hist-copy-btn {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            padding: 2px 8px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background: rgba(168, 85, 247, .12);
+            color: var(--accent);
+            font-family: 'Outfit', sans-serif;
+            transition: background .2s;
+        }
+
+        .hist-copy-btn:hover {
+            background: rgba(168, 85, 247, .25);
+        }
+
+        .hist-empty {
+            text-align: center;
+            padding: 22px;
+            font-size: 12px;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        /* ═══════════════════════════════════════════
+   NOTE
+═══════════════════════════════════════════ */
+        .note {
+            padding: 12px 14px;
+            border-radius: 14px;
+            font-size: 11.5px;
+            background: rgba(124, 58, 237, .06);
+            border: 1px solid rgba(124, 58, 237, .16);
+            color: var(--muted);
+            line-height: 1.6;
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .2s both;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+        }
+
+        .note strong {
+            color: var(--accent);
+        }
+
+        /* ═══════════════════════════════════════════
+   CREDITS
+═══════════════════════════════════════════ */
+        .credits {
+            text-align: center;
+            padding: 10px 0 4px;
+            animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .22s both;
+        }
+
+        .credits-inner {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            border-radius: 100px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            color: var(--muted);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .heart {
+            color: #f472b6;
+            animation: heartBeat 2.4s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        .name {
+            background: linear-gradient(135deg, #c084fc, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            letter-spacing: .06em;
+        }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            30% {
+                transform: scale(1.3)
+            }
+
+            60% {
+                transform: scale(1.15)
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════════════════ */
+        @media(max-width:480px) {
+            .wrap {
+                padding-left: 12px;
+                padding-right: 12px;
+                gap: 11px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            textarea {
+                font-size: 15px;
+                min-height: 100px;
+            }
+
+            .btn-convert {
+                font-size: 14.5px;
+                padding: 13px 16px;
+            }
+
+            .tab-btn {
+                font-size: 10.5px;
+                padding: 11px 6px;
+            }
+
+            .pane-content {
+                padding: 12px 13px;
+            }
+
+            #paneLegacy {
+                font-size: 13px;
+            }
+
+            .note {
+                font-size: 11px;
+            }
+
+            .stats-bar {
+                gap: 5px;
+            }
+
+            .stat-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+
+            .hist-input {
+                font-size: 13px;
+            }
+
+            .toggle-track {
+                width: 42px;
+                height: 24px;
+            }
+
+            .toggle-thumb {
+                width: 18px;
+                height: 18px;
+            }
+
+            [data-theme="light"] .toggle-thumb {
+                transform: translateX(18px);
+            }
+        }
+
+        @media(max-width:360px) {
+            .wrap {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .btn-convert {
+                font-size: 14px;
+                padding: 12px 14px;
+            }
+
+            .badge {
+                font-size: 9px;
+                padding: 3px 10px;
+            }
+
+            .stats-bar {
+                gap: 4px;
+            }
+
+            .stat-pill {
+                font-size: 9.5px;
+                padding: 3px 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-canvas">
+        <div class="stars"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="grain"></div>
+    </div>
+
+    <div class="wrap">
+
+        <!-- HEADER -->
+        <header class="header">
+            <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode" aria-label="Toggle theme">
+                <div class="toggle-track">
+                    <div class="toggle-thumb" id="toggleThumb">🌙</div>
+                </div>
+            </button>
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Unicode → FM / DL Legacy
+            </div>
+            <h1>සිංහල Converter</h1>
+            <p class="subtitle">⚡ Live converts as you type · Copy the Legacy code</p>
+        </header>
+
+        <!-- STATS BAR -->
+        <div class="stats-bar">
+            <div class="stat-pill" id="statChars">
+                <span class="stat-icon">📝</span>
+                <span>Chars</span>
+                <span class="stat-val" id="statCharVal">0</span>
+            </div>
+            <div class="stat-pill" id="statWords">
+                <span class="stat-icon">💬</span>
+                <span>Words</span>
+                <span class="stat-val" id="statWordVal">0</span>
+            </div>
+            <div class="stat-pill" id="statLines">
+                <span class="stat-icon">↵</span>
+                <span>Lines</span>
+                <span class="stat-val" id="statLineVal">1</span>
+            </div>
+            <div class="stat-pill" id="statMapped">
+                <span class="stat-icon">✅</span>
+                <span>Mapped</span>
+                <span class="stat-val" id="statMappedVal">—</span>
+            </div>
+        </div>
+
+        <!-- INPUT CARD -->
+        <div class="card">
+            <div class="card-head">
+                <span class="card-label">Unicode ඉනිපුට්</span>
+                <span class="char-count" id="inputCount">0 chars</span>
+            </div>
+            <textarea id="input" placeholder="සිංහල ටයිප් කරන්න… (e.g. සහන්)" spellcheck="false" autocorrect="off"
+                autocapitalize="off" rows="5"></textarea>
+        </div>
+
+        <!-- UNMAPPED WARNING -->
+        <div class="warn-box" id="warnBox">
+            <span class="warn-icon">⚠️</span>
+            <div>
+                <div>Some characters have <strong>no legacy mapping</strong> and were passed through as-is:</div>
+                <div class="warn-chars" id="warnChars"></div>
+            </div>
+        </div>
+
+        <!-- CONVERT ROW -->
+        <div class="convert-row">
+            <div class="divline"></div>
+            <button class="btn btn-convert" id="convertBtn">⌨ Convert</button>
+            <button class="btn btn-clear" id="clearBtn" title="Clear all">✕</button>
+            <div class="divline"></div>
+        </div>
+
+        <!-- OUTPUT -->
+        <div class="output-section">
+            <div class="pane-tabs">
+                <button class="tab-btn active">🔤 Legacy Code Output</button>
+            </div>
+            <div class="pane-body">
+                <div class="pane active">
+                    <div class="pane-content" id="paneLegacy">
+                        <span class="empty-msg">The encoded legacy text will appear here. Copy it, paste into Word, then
+                            apply FM Abhaya font.</span>
+                    </div>
+                </div>
+                <div class="pane-footer">
+                    <span class="hint"><strong>Legacy-encoded</strong> text — copy and paste into Word /
+                        Photoshop.</span>
+                    <button class="btn btn-copy" id="copyBtn" disabled onclick="copyOutput()">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATUS -->
+        <div class="status" id="statusBar">
+            <div class="dot"></div>
+            <span id="statusText">Ready — type Sinhala and tap Convert</span>
+        </div>
+
+        <!-- HISTORY -->
+        <div class="history-section">
+            <div class="section-header">
+                <div class="section-title">
+                    🕘 Conversion History
+                    <span class="hist-count" id="histCount">0</span>
+                </div>
+                <button class="btn-clear-hist" id="clearHistBtn">Clear all</button>
+            </div>
+            <div class="hist-list" id="histList">
+                <div class="hist-empty">No conversions yet — start typing!</div>
+            </div>
+        </div>
+
+        <!-- NOTE -->
+        <div class="note">
+            💡 <strong>Tip:</strong> Paste the copied Legacy Code into <strong>Word / Photoshop</strong> and set the
+            font to <strong>FM Abhaya</strong> or <strong>DL-Paras</strong> to see the correct Sinhala rendering. Click
+            any history item to reload it.
+        </div>
+
+        <!-- CREDITS -->
+        <footer class="credits">
+            <div class="credits-inner">
+                Made with <span class="heart">♥</span> by <span class="name">Sajee</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // ══════════════════════════════════════════
+        // MAP
+        // ══════════════════════════════════════════
+        const MAP = {
+            '\u0D85': 'w', '\u0D86': 'wd', '\u0D87': 'we', '\u0D88': 'weS',
+            '\u0D89': 'b', '\u0D8A': 'bS', '\u0D8B': 'W', '\u0D8C': 'WS',
+            '\u0D8F': 'F', '\u0D91': 'tA', '\u0D92': 'tEA',
+            '\u0D94': 'ta', '\u0D95': 'taS', '\u0D96': 'taT',
+            '\u0D9A': 'l', '\u0D9B': 'L', '\u0D9C': 'f', '\u0D9D': 'F',
+            '\u0D9E': 'Z', '\u0D9F': 'K',
+            '\u0DA0': 'p', '\u0DA1': 'P', '\u0DA2': 'c', '\u0DA3': 'C', '\u0DA5': '[',
+            '\u0DA7': 'g', '\u0DA8': 'G', '\u0DA9': 'v', '\u0DAA': 'V',
+            '\u0DAB': 'k', '\u0DAC': 'K',
+            '\u0DAD': 'o', '\u0DAE': 'O', '\u0DAF': 'n', '\u0DB0': 'N',
+            '\u0DB1': 'k', '\u0DB3': 'K',
+            '\u0DB4': 'm', '\u0DB5': 'M', '\u0DB6': 'n', '\u0DB7': 'N',
+            '\u0DB8': 'u', '\u0DB9': 'U',
+            '\u0DBA': 'h', '\u0DBB': 'r', '\u0DBD': ',',
+            '\u0DC0': 'j', '\u0DC1': 'Y', '\u0DC2': 'I',
+            '\u0DC3': 'i', '\u0DC4': 'y', '\u0DC5': '¿', '\u0DC6': 'a',
+            '\u0DCF': 'd', '\u0DD0': 'e', '\u0DD1': 'eS',
+            '\u0DD2': 's', '\u0DD3': 'S', '\u0DD4': 'q', '\u0DD6': 'Q',
+            '\u0DD8': 'r', '\u0DD9': 'E', '\u0DDA': 'A',
+            '\u0DDC': 'a', '\u0DDD': 'aS', '\u0DDE': 'aT', '\u0DDF': 'x', '\u0DDB': 'EA',
+            '\u0D82': ';', '\u0D83': 'Z', '\u0DCA': '=',
+            '\u0DE6': '0', '\u0DE7': '1', '\u0DE8': '2', '\u0DE9': '3', '\u0DEA': '4',
+            '\u0DEB': '5', '\u0DEC': '6', '\u0DED': '7', '\u0DEE': '8', '\u0DEF': '9',
+            '\u0DF4': '@', '\u200D': '', '\u200C': '',
+        };
+
+        const LIGATURES = [
+            ['\u0D9A\u0DCA\u200D\u0DC2', 'la'],
+            ['\u0DAD\u0DCA\u0DAD', 'oo'],
+        ];
+
+        const SILENT = new Set([' ', '\n', '\r', '\t', '.', '!', '?', ',', ';', ':', '"', "'", '(', ')', '[', ']', '{', '}', '-', '_', '/', '\u200D', '\u200C', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+
+        function doConvertText(input) {
+            let t = input;
+            for (const [s, r] of LIGATURES) t = t.split(s).join(r);
+            let out = '', i = 0;
+            const unmapped = new Set();
+            while (i < t.length) {
+                const ch = t[i];
+                if (MAP[ch] !== undefined && t[i + 1] === '\u0DCA' && t[i + 2] === '\u0DBB') { out += 'z' + MAP[ch]; i += 3; continue; }
+                if (MAP[ch] !== undefined && t[i + 1] === '\u0DCA' && t[i + 2] === '\u0DBA') { out += MAP[ch] + 'H'; i += 3; continue; }
+                if (MAP[ch] !== undefined) {
+                    out += MAP[ch];
+                } else {
+                    out += ch;
+                    const cp = ch.codePointAt(0);
+                    if (!SILENT.has(ch) && cp > 127) unmapped.add(ch);
+                }
+                i++;
+            }
+            return { out, unmapped };
+        }
+
+        // ══════════════════════════════════════════
+        // STATE + KEYS
+        // ══════════════════════════════════════════
+        let legacy = '';
+        let history = [];
+        const MAX_HIST = 12;
+        const DRAFT_KEY = 'sinhala_draft_v1';
+        const HIST_KEY = 'sinhala_hist_v1';
+        const THEME_KEY = 'sinhala_theme_v1';
+
+        // ══════════════════════════════════════════
+        // REFS
+        // ══════════════════════════════════════════
+        const inputEl = document.getElementById('input');
+        const cvtBtn = document.getElementById('convertBtn');
+        const clrBtn = document.getElementById('clearBtn');
+        const cpyBtn = document.getElementById('copyBtn');
+        const sBar = document.getElementById('statusBar');
+        const sTxt = document.getElementById('statusText');
+        const lPre = document.getElementById('paneLegacy');
+        const warnBox = document.getElementById('warnBox');
+        const warnChars = document.getElementById('warnChars');
+        const histList = document.getElementById('histList');
+        const histCount = document.getElementById('histCount');
+        const clearHistBtn = document.getElementById('clearHistBtn');
+        const themeToggle = document.getElementById('themeToggle');
+        const toggleThumb = document.getElementById('toggleThumb');
+        const statCharVal = document.getElementById('statCharVal');
+        const statWordVal = document.getElementById('statWordVal');
+        const statLineVal = document.getElementById('statLineVal');
+        const statMappedVal = document.getElementById('statMappedVal');
+        const statCharsEl = document.getElementById('statChars');
+        const statWordsEl = document.getElementById('statWords');
+        const statLinesEl = document.getElementById('statLines');
+        const statMappedEl = document.getElementById('statMapped');
+
+        // ══════════════════════════════════════════
+        // THEME
+        // ══════════════════════════════════════════
+        function initTheme() {
+            const saved = tryGet(THEME_KEY) || 'dark';
+            applyTheme(saved, false);
+        }
+        function applyTheme(t, save = true) {
+            document.documentElement.setAttribute('data-theme', t);
+            toggleThumb.textContent = t === 'dark' ? '🌙' : '☀️';
+            if (save) trySet(THEME_KEY, t);
+        }
+        themeToggle.addEventListener('click', () => {
+            const cur = document.documentElement.getAttribute('data-theme');
+            applyTheme(cur === 'dark' ? 'light' : 'dark');
+        });
+
+        // ══════════════════════════════════════════
+        // STATS
+        // ══════════════════════════════════════════
+        function updateStats(val, mappedPct) {
+            const chars = val.length;
+            const words = val.trim() ? val.trim().split(/\s+/).filter(Boolean).length : 0;
+            const lines = val ? val.split('\n').length : 1;
+
+            statCharVal.textContent = chars;
+            statWordVal.textContent = words;
+            statLineVal.textContent = lines;
+
+            statCharsEl.classList.toggle('active', chars > 0);
+            statWordsEl.classList.toggle('active', words > 0);
+            statLinesEl.classList.toggle('active', lines > 1);
+
+            if (mappedPct !== undefined) {
+                statMappedVal.textContent = mappedPct + '%';
+                statMappedEl.classList.toggle('active', mappedPct === 100);
+            } else {
+                statMappedVal.textContent = '—';
+                statMappedEl.classList.remove('active');
+            }
+        }
+
+        // ══════════════════════════════════════════
+        // WARNING
+        // ══════════════════════════════════════════
+        function showWarning(unmapped) {
+            if (!unmapped.size) { warnBox.classList.remove('visible'); return; }
+            warnBox.classList.add('visible');
+            warnChars.innerHTML = '';
+            unmapped.forEach(ch => {
+                const chip = document.createElement('span');
+                chip.className = 'warn-chip';
+                chip.textContent = ch + ' U+' + ch.codePointAt(0).toString(16).toUpperCase().padStart(4, '0');
+                warnChars.appendChild(chip);
+            });
+        }
+
+        // ══════════════════════════════════════════
+        // HISTORY
+        // ══════════════════════════════════════════
+        function loadHistory() {
+            try { history = JSON.parse(tryGet(HIST_KEY) || '[]'); } catch (e) { history = []; }
+            renderHistory();
+        }
+        function saveHistory() { trySet(HIST_KEY, JSON.stringify(history)); }
+        function addToHistory(input, output) {
+            if (history.length && history[0].input === input) return;
+            history.unshift({
+                input: input.slice(0, 80),
+                output: output.slice(0, 120),
+                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            });
+            if (history.length > MAX_HIST) history.pop();
+            saveHistory();
+            renderHistory();
+        }
+        function renderHistory() {
+            histCount.textContent = history.length;
+            if (!history.length) {
+                histList.innerHTML = '<div class="hist-empty">No conversions yet — start typing!</div>';
+                return;
+            }
+            histList.innerHTML = '';
+            history.forEach((item, idx) => {
+                const el = document.createElement('div');
+                el.className = 'hist-item';
+                el.style.animationDelay = (idx * 0.04) + 's';
+                el.innerHTML = `
+      <div class="hist-text">
+        <div class="hist-input">${esc(item.input)}</div>
+        <div class="hist-output">${esc(item.output)}</div>
+      </div>
+      <div class="hist-meta">
+        <span class="hist-time">${item.time}</span>
+        <button class="hist-copy-btn" data-idx="${idx}">COPY</button>
+      </div>`;
+                el.addEventListener('click', e => {
+                    if (e.target.classList.contains('hist-copy-btn')) return;
+                    inputEl.value = history[idx].input;
+                    liveConvert();
+                    inputEl.focus();
+                    inputEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+                histList.appendChild(el);
+            });
+            histList.querySelectorAll('.hist-copy-btn').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    const i = +btn.dataset.idx;
+                    quickCopy(history[i].output, btn);
+                });
+            });
+        }
+        function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+        clearHistBtn.addEventListener('click', () => {
+            history = []; saveHistory(); renderHistory();
+        });
+
+        // ══════════════════════════════════════════
+        // AUTO-SAVE DRAFT
+        // ══════════════════════════════════════════
+        let draftTimer = null;
+        function saveDraft() { trySet(DRAFT_KEY, inputEl.value); }
+        function loadDraft() {
+            const d = tryGet(DRAFT_KEY);
+            if (d) inputEl.value = d;
+        }
+
+        // ══════════════════════════════════════════
+        // CONVERT
+        // ══════════════════════════════════════════
+        inputEl.addEventListener('input', () => {
+            liveConvert();
+            clearTimeout(draftTimer);
+            draftTimer = setTimeout(saveDraft, 800);
+        });
+        cvtBtn.addEventListener('click', run);
+        inputEl.addEventListener('keydown', e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) run(); });
+
+        function liveConvert() {
+            const raw = inputEl.value;
+            updateStats(raw);
+            if (!raw.trim()) {
+                legacy = '';
+                lPre.innerHTML = '<span class="empty-msg">The encoded legacy text will appear here. Copy it, paste into Word, then apply FM Abhaya font.</span>';
+                cpyBtn.disabled = true;
+                warnBox.classList.remove('visible');
+                updateStats('');
+                setStatus('Ready — type Sinhala and tap Convert', '');
+                return;
+            }
+            const { out, unmapped } = doConvertText(raw.trim());
+            legacy = out;
+            lPre.textContent = legacy;
+            cpyBtn.disabled = false;
+            showWarning(unmapped);
+
+            // Mapped % calc
+            const sChars = [...raw].filter(ch => { const cp = ch.codePointAt(0); return cp >= 0x0D80 && cp <= 0x0DFF; });
+            const pct = sChars.length ? Math.round(sChars.filter(ch => MAP[ch] !== undefined).length / sChars.length * 100) : 100;
+            updateStats(raw, pct);
+
+            setStatus('⚡ Live — Legacy code updates as you type.', 'ok');
+        }
+
+        function run() {
+            const raw = inputEl.value.trim();
+            if (!raw) { setStatus('⚠ Type some Sinhala first', ''); inputEl.focus(); return; }
+            setStatus('Converting…', 'run');
+            cvtBtn.classList.add('pulse');
+            setTimeout(() => cvtBtn.classList.remove('pulse'), 500);
+            setTimeout(() => {
+                const { out, unmapped } = doConvertText(raw);
+                legacy = out;
+                lPre.textContent = legacy;
+                cpyBtn.disabled = false;
+                showWarning(unmapped);
+                addToHistory(raw, legacy);
+                saveDraft();
+                const sChars = [...raw].filter(ch => { const cp = ch.codePointAt(0); return cp >= 0x0D80 && cp <= 0x0DFF; });
+                const pct = sChars.length ? Math.round(sChars.filter(ch => MAP[ch] !== undefined).length / sChars.length * 100) : 100;
+                updateStats(inputEl.value, pct);
+                setStatus('✓ Done! Legacy code is ready to copy.', 'ok');
+            }, 70);
+        }
+
+        // ══════════════════════════════════════════
+        // COPY
+        // ══════════════════════════════════════════
+        function copyOutput() {
+            if (!legacy) return;
+            const done = () => {
+                cpyBtn.textContent = '✓ Copied!'; cpyBtn.classList.add('copied');
+                setStatus('✓ Paste into Word and apply FM Abhaya or DL-Paras font.', 'ok');
+                setTimeout(() => { cpyBtn.textContent = 'Copy'; cpyBtn.classList.remove('copied'); }, 2800);
+            };
+            if (navigator.clipboard) navigator.clipboard.writeText(legacy).then(done).catch(() => fbCopy(legacy, done));
+            else fbCopy(legacy, done);
+        }
+        function quickCopy(text, btn) {
+            const orig = btn.textContent;
+            const done = () => { btn.textContent = '✓'; setTimeout(() => btn.textContent = orig, 1800); };
+            if (navigator.clipboard) navigator.clipboard.writeText(text).then(done).catch(() => fbCopy(text, done));
+            else fbCopy(text, done);
+        }
+        function fbCopy(text, cb) {
+            const ta = document.createElement('textarea');
+            ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+            document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, 99999);
+            try { document.execCommand('copy'); cb(); } catch (e) { setStatus('Copy failed — select manually', ''); }
+            document.body.removeChild(ta);
+        }
+
+        // ══════════════════════════════════════════
+        // CLEAR
+        // ══════════════════════════════════════════
+        clrBtn.addEventListener('click', () => {
+            inputEl.value = ''; legacy = '';
+            lPre.innerHTML = '<span class="empty-msg">The encoded legacy text will appear here. Copy it, paste into Word, then apply FM Abhaya font.</span>';
+            cpyBtn.disabled = true; warnBox.classList.remove('visible');
+            updateStats('');
+            setStatus('Cleared — ready for new text', '');
+            trySet(DRAFT_KEY, '');
+            inputEl.focus();
+        });
+
+        // ══════════════════════════════════════════
+        // STATUS
+        // ══════════════════════════════════════════
+        function setStatus(m, t) { sBar.className = 'status' + (t ? ' ' + t : ''); sTxt.textContent = m; }
+
+        // ══════════════════════════════════════════
+        // STORAGE HELPERS
+        // ══════════════════════════════════════════
+        function tryGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+        function trySet(k, v) { try { localStorage.setItem(k, v); } catch (e) { } }
+
+        // ══════════════════════════════════════════
+        // INIT
+        // ══════════════════════════════════════════
+        initTheme();
+        loadDraft();
+        loadHistory();
+        updateStats(inputEl.value);
+        if (inputEl.value.trim()) liveConvert();
+    </script>
+</body>
+
+</html>
